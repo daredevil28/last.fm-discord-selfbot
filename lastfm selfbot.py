@@ -152,7 +152,7 @@ def lastfm_thread():
 @bot.event
 async def on_message(message):
 	global enabled
-	if message.server.id in whitelist: #check in the blacklisted list if the server ID is in it
+	if message.server.id in whitelist: #check in the whitelist list if the server ID is in it
 		if message.author == bot.user: #checks if the message is from the user
 			if message.content.startswith(prefix + ' on'):
 				enabled = True
