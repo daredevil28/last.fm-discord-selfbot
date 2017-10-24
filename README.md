@@ -17,3 +17,8 @@ api_key = 'lastfmapi'
 You can get a lastfm api key here: https://www.last.fm/api/account/create
 
 Run the bot using `python3 "lastfm selfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
+
+
+This bot uses the NowPlayingToTxt code: https://github.com/alecksphillips/NowPlayingToTxt
+
+Big thanks to my friend DJPadbit who helped me a ton with ~copy pasting~ coding this.
