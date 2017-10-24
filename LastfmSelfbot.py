@@ -140,7 +140,7 @@ async def lastfm_thread_async():
 					
 					last_track = ''
 					track_data = ''
-				
+					await bot.change_presence()
 			#Need to wait at least 1 second for another API call
 			time.sleep(args['delay'])
 
