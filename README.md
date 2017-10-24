@@ -16,6 +16,17 @@ api_key = 'lastfmapi'
 ```
 You can get a lastfm api key here: https://www.last.fm/api/account/create
 
+You also require to whitelist a server where you can use the bot in. I have done this because I am in 44 servers and the selfbot used 30% of my CPU constantly.
+
+```python
+'''server whitelist where various servers
+can be put in. The bot wil only check in
+these servers for messages
+format: whitelist = ["serverID1", serverID2", ETC]
+'''
+whitelist = ["paste a server ID in here"]
+```
+
 Run the bot using `python3 "lastfm selfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
 
 
