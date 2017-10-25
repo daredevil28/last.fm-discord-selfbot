@@ -29,6 +29,13 @@ whitelist = ["paste a server ID in here"]
 
 Run the bot using `python3 "lastfm selfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
 
+You can use the following commands:
+
+```
+>>lfm on #turns on last.fm
+>>lfm off #turns off last.fm
+>>lfm shutdown #Shuts the bot down
+```
 
 This bot uses the NowPlayingToTxt code: https://github.com/alecksphillips/NowPlayingToTxt
 

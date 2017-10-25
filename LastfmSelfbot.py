@@ -17,15 +17,9 @@ import asyncio
 
 #discord token
 TOKEN = 'THETOKEN'
-about = "Puts the content of a text file as the now playing"
 #api key for last.fm
 api_key = 'lastfmapi'
 
-
-#Putting some defaults and shortcuts here
-prefix = ">>lfm"
-bot = discord.Client()
-local_copy = 'nowplaying.xml'
 
 '''server whitelist where various servers
 can be put in. The bot wil only check in
@@ -37,12 +31,15 @@ whitelist = ["paste a server ID in here"]
 
 #The last.fm stuff happens under here
 
-#Putting defaults at top of file for reference
+#Putting defaults and shortcuts at top of the file
 defaults = dict()
 defaults['prepend'] = ''
 defaults['append'] = ''
 defaults['delay'] = 5
 args = dict()
+prefix = ">>lfm"
+bot = discord.Client()
+local_copy = 'nowplaying.xml'
 
 def get_parameters():
 	parser = argparse.ArgumentParser(prog='NowPlayingToTxt',description="description")
@@ -65,7 +62,6 @@ def get_parameters():
 		args['delay'] = input.delay
 
 #Download xml as binary
-#Might need this idk
 def download(url,filename):
 	try:
 		instream=urlopen(url)
@@ -149,6 +145,8 @@ def lastfm_thread():
 	asyncio.set_event_loop(loop)
 	loop.run_until_complete(lastfm_thread_async())
 
+#actual bot stuff happens under here	
+	
 @bot.event
 async def on_message(message):
 	global enabled
