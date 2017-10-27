@@ -27,7 +27,7 @@ format: whitelist = ["serverID1", serverID2", ETC]
 whitelist = ["paste a server ID in here"]
 ```
 
-Run the bot using `python3 "lastfm selfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
+Run the bot using `python3 "LastfmSelfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
 
 You can use the following commands:
 
