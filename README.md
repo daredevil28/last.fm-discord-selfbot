@@ -25,14 +25,14 @@ Run the bot using `python3 LastfmSelfbot.py [your last.fm username] (-p prepend)
 
 #You can use the following commands:
 
-
->>lfm on #turns on last.fm and sets you online
->>lfm off #turns off last.fm and sets you offline
-=======
-Run the bot using `python3 "LastfmSelfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
-
 You can use the following commands:
+```
+>>lfm on #turns on last.fm and sets you online
 
+>>lfm off #turns off last.fm and sets you offline
+
+>>lfm shutdown #shuts down the bot
+```
 
 This bot uses the NowPlayingToTxt code: https://github.com/alecksphillips/NowPlayingToTxt
 
