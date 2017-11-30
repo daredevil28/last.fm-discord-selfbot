@@ -26,7 +26,6 @@ api_key = data["api"]
 
 whitelist = data["whitelist"]
 
-
 #The last.fm stuff happens under here
 
 #Putting defaults and shortcuts at top of the file
