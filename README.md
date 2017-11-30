@@ -23,11 +23,21 @@ You also require to whitelist a server where you can use the bot in. I have done
 
 Run the bot using `python3 LastfmSelfbot.py [your last.fm username] (-p prepend) (-a append) (-d delay)`
 
+<<<<<<< HEAD
 You can use the following commands:
 
 ```
 >>lfm on #turns on last.fm and sets you online
 >>lfm off #turns off last.fm and sets you offline
+=======
+Run the bot using `python3 "LastfmSelfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
+
+You can use the following commands:
+
+```
+>>lfm on #turns on last.fm
+>>lfm off #turns off last.fm
+>>>>>>> 28f3bade07ae74526da65bf5bd31097ba3b82006
 >>lfm shutdown #Shuts the bot down
 ```
 

@@ -20,11 +20,25 @@ import asyncio
 data = json.load(open('token.json'))
 
 #discord token
+<<<<<<< HEAD
 TOKEN = data["token"]
+=======
+TOKEN = 'THETOKEN'
+>>>>>>> 28f3bade07ae74526da65bf5bd31097ba3b82006
 #api key for last.fm
 api_key = data["api"]
 
+<<<<<<< HEAD
 whitelist = data["whitelist"]
+=======
+'''server whitelist where various servers
+can be put in. The bot wil only check in
+these servers for messages
+
+format: whitelist = ["serverID1", serverID2", ETC]
+'''
+whitelist = ["paste a server ID in here"]
+>>>>>>> 28f3bade07ae74526da65bf5bd31097ba3b82006
 
 #The last.fm stuff happens under here
 
@@ -34,7 +48,11 @@ defaults['prepend'] = ''
 defaults['append'] = ''
 defaults['delay'] = 5
 args = dict()
+<<<<<<< HEAD
 prefix = ">>lfm" #prefix can be changed to anything
+=======
+prefix = ">>lfm"
+>>>>>>> 28f3bade07ae74526da65bf5bd31097ba3b82006
 bot = discord.Client()
 local_copy = 'nowplaying.xml'
 
