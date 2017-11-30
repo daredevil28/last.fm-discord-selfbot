@@ -9,7 +9,7 @@ Rename `token.json.new` to `token.json`
 
 Open the .json in your favourite text editor
 
-```json
+```
 {
 	"token": "YOUR_TOKEN", #Your user token
 	"whitelist": "YOUR_SERVER_ID", #ID of the server you want to use the selfbot in
@@ -23,8 +23,7 @@ You also require to whitelist a server where you can use the bot in. I have done
 
 Run the bot using `python3 LastfmSelfbot.py [your last.fm username] (-p prepend) (-a append) (-d delay)`
 
-<<<<<<< HEAD
-You can use the following commands:
+#You can use the following commands:
 
 ```
 >>lfm on #turns on last.fm and sets you online
@@ -37,7 +36,6 @@ You can use the following commands:
 ```
 >>lfm on #turns on last.fm
 >>lfm off #turns off last.fm
->>>>>>> 28f3bade07ae74526da65bf5bd31097ba3b82006
 >>lfm shutdown #Shuts the bot down
 ```
 
