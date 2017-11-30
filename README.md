@@ -23,8 +23,6 @@ You also require to whitelist a server where you can use the bot in. I have done
 
 Run the bot using `python3 LastfmSelfbot.py [your last.fm username] (-p prepend) (-a append) (-d delay)`
 
-#You can use the following commands:
-
 You can use the following commands:
 ```
 >>lfm on #turns on last.fm and sets you online
