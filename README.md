@@ -5,35 +5,29 @@
 
 `python3 -m pip install -U discord.py`
 
-You also need to change the token and the last.fm api key in the code before using it:
+Rename `token.json.new` to `token.json`
 
-```python
-#discord token
-TOKEN = 'THETOKEN'
-about = "Puts the content of a text file as the now playing"
-#api key for last.fm
-api_key = 'lastfmapi'
+Open the .json in your favourite text editor
+
+```json
+{
+	"token": "YOUR_TOKEN", #Your user token
+	"whitelist": "YOUR_SERVER_ID", #ID of the server you want to use the selfbot in
+	"api": "YOUR_API" #last.fm api
+}
 ```
+
 You can get a lastfm api key here: https://www.last.fm/api/account/create
 
 You also require to whitelist a server where you can use the bot in. I have done this because I am in 44 servers and the selfbot used 30% of my CPU constantly.
 
-```python
-'''server whitelist where various servers
-can be put in. The bot wil only check in
-these servers for messages
-format: whitelist = ["serverID1", serverID2", ETC]
-'''
-whitelist = ["paste a server ID in here"]
-```
-
-Run the bot using `python3 "lastfm selfbot.py" [your discord username] (-p prepend) (-a append) (-d delay)`
+Run the bot using `python3 LastfmSelfbot.py [your last.fm username] (-p prepend) (-a append) (-d delay)`
 
 You can use the following commands:
 
 ```
->>lfm on #turns on last.fm
->>lfm off #turns off last.fm
+>>lfm on #turns on last.fm and sets you online
+>>lfm off #turns off last.fm and sets you offline
 >>lfm shutdown #Shuts the bot down
 ```
 

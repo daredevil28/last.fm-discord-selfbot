@@ -1,0 +1,5 @@
+{
+	"token": "YOUR_TOKEN",
+	"whitelist": "YOUR_SERVER_ID",
+	"api": "YOUR_API"
+}

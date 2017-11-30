@@ -11,23 +11,20 @@ import time
 import argparse
 import codecs
 import threading
+import json
 #libraries related to discord
 import discord
 import asyncio
 
+#JSON
+data = json.load(open('token.json'))
+
 #discord token
-TOKEN = 'THETOKEN'
+TOKEN = data["token"]
 #api key for last.fm
-api_key = 'lastfmapi'
+api_key = data["api"]
 
-
-'''server whitelist where various servers
-can be put in. The bot wil only check in
-these servers for messages
-
-format: whitelist = ["serverID1", serverID2", ETC]
-'''
-whitelist = ["paste a server ID in here"]
+whitelist = data["whitelist"]
 
 #The last.fm stuff happens under here
 
@@ -37,7 +34,7 @@ defaults['prepend'] = ''
 defaults['append'] = ''
 defaults['delay'] = 5
 args = dict()
-prefix = ">>lfm"
+prefix = ">>lfm" #prefix can be changed to anything
 bot = discord.Client()
 local_copy = 'nowplaying.xml'
 
@@ -73,17 +70,17 @@ def download(url,filename):
 	except Exception as e:
 		print(e)
 
-#print out  information about the bot.
+#print out information about the bot.
 @bot.event
 async def on_ready():
-	print(bot.user.name)
 	print(bot.user.id)
 	print(bot.user)
 	print('Line them up, knock em down! last.fm bot ready for action.')
+	await bot.change_presence(status=discord.Status.invisible)
 	print('--------')
 	threading.Thread(target=lastfm_thread).start()
 
-enabled = False
+enabled = True #set to True if you want the last.fm script to start at boot, set to false if you want to manually start the script
 
 async def lastfm_thread_async():
 	global enabled
@@ -152,17 +149,32 @@ async def on_message(message):
 	global enabled
 	if message.server.id in whitelist: #check in the whitelist list if the server ID is in it
 		if message.author == bot.user: #checks if the message is from the user
+
 			if message.content.startswith(prefix + ' on'):
-				enabled = True
-				print("Enabled")
-				await bot.delete_message(message)
+				if enabled == False: #is it already enabled?
+					enabled = True
+					print("Enabled")
+					await bot.change_presence(status=discord.Status.online)
+					await bot.delete_message(message)
+				elif enabled == True: 
+					await bot.edit_message(message, new_content="last.fm bot is already enabled!")
+					await asyncio.sleep(1)
+					await bot.delete_message(message)
+
 			elif message.content.startswith(prefix + ' off'):
-				enabled = False
-				await bot.change_presence()
-				print("Disabled")
-				await bot.delete_message(message)
+				if enabled == True:
+					enabled = False
+					await bot.change_presence(status=discord.Status.invisible)
+					print("Disabled")
+					await bot.delete_message(message)
+				elif enabled == False:
+					await bot.edit_message(message, new_content="last.fm bot is already disabled!")
+					await asyncio.sleep(1)
+					await bot.delete_message(message)
+
 			elif message.content.startswith(prefix + ' shutdown'):
 				await bot.delete_message(message)
+				await bot.change_presence(status=discord.Status.invisible)
 				os._exit(0)
 		
 
